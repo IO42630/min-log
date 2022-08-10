@@ -74,11 +74,6 @@ public class LogU {
         return String.format("[           ]   %-80s", msg);
     }
 
-
-
-
-
-
     private static void log(Level level, LogPrint logPrint, @NotNull String msg, @Nullable Object... args) {
         switch (logPrint) {
             case START -> msg = startMsg(msg, args);

@@ -19,7 +19,6 @@ public class LogFormatter extends SimpleFormatter {
         }
     }
 
-
     @Override
     public synchronized String format(LogRecord logRecord) {
         String msg = logRecord.getMessage();
@@ -52,6 +51,5 @@ public class LogFormatter extends SimpleFormatter {
             callerStack[pos].getMethodName()
         );
     }
-
 
 }
