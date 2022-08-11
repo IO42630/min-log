@@ -14,3 +14,11 @@ Wraps the `java` logger.
     * admittedly, this is a slightly wonky approach.
   * format:
     * default: `"[%1$tF %1$tT] [%2$-7s] [%3$-20s] %4$-120s [%5$s]\n"`
+
+
+
+### example output
+* using `"[%1$tF %1$tT] [%2$-7s] [%3$-14s] %4$-180s [%5$s]\n"`
+* note that the `[START >   ]` is inclueded in the `180s`.
+
+![](./img/ex1.png)
