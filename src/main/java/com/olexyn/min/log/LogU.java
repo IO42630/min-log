@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -33,8 +34,8 @@ public class LogU {
         if (logFileDir == null) {
             logFileDir = System.getProperty("user.dir");
         }
-
         var logger = Logger.getLogger("default");
+        Arrays.stream(logger.getHandlers()).forEach(logger::removeHandler);
         logger.setUseParentHandlers(false);
         var ch = new ConsoleHandler();
         ch.setFormatter(new LogFormatter(projectPackageName, format));
