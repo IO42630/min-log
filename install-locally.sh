@@ -1,5 +1,5 @@
 #!/bin/bash
-version="0.1"
+version="0.1.1"
 packaging="jar"
 file="target/min-log-${version}.${packaging}"
 groupId="com.olexyn.min.log"

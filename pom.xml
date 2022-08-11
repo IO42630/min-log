@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.olexyn.min.log</groupId>
     <artifactId>min-log</artifactId>
-    <version>0.1</version>
+    <version>0.1.1</version>
     <name>min-log</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
