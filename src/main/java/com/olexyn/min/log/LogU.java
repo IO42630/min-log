@@ -1,8 +1,5 @@
 package com.olexyn.min.log;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.logging.ConsoleHandler;
@@ -10,11 +7,15 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 import static com.olexyn.min.log.LogPrint.END;
 import static com.olexyn.min.log.LogPrint.LOAD;
 import static com.olexyn.min.log.LogPrint.PLAIN;
 import static com.olexyn.min.log.LogPrint.SAVE;
 import static com.olexyn.min.log.LogPrint.START;
+import static java.lang.String.format;
 import static java.util.logging.Level.INFO;
 import static java.util.logging.Level.WARNING;
 
@@ -51,28 +52,28 @@ public class LogU {
     }
 
     private static String startMsg(@NotNull String msg, @Nullable Object... args) {
-        if (args != null) { msg = String.format(msg, args); }
-        return String.format("[START >    ]   %-80s", msg);
+        if (args != null) { msg = format(msg, args); }
+        return format("[START >    ]   %-80s", msg);
     }
 
     private static String endMsg(@NotNull String msg, @Nullable Object... args) {
-        if (args != null) { msg = String.format(msg, args); }
-        return String.format("[      > END]   %-80s", msg);
+        if (args != null) { msg = format(msg, args); }
+        return format("[      > END]   %-80s", msg);
     }
 
     private static String loadMsg(@NotNull String msg, @Nullable Object... args) {
-        if (args != null) { msg = String.format(msg, args); }
-        return String.format("[LOAD       ]   %-80s", msg);
+        if (args != null) { msg = format(msg, args); }
+        return format("[LOAD       ]   %-80s", msg);
     }
 
     private static String saveMsg(@NotNull String msg, @Nullable Object... args) {
-        if (args != null) { msg = String.format(msg, args); }
-        return String.format("[       SAVE]   %-80s", msg);
+        if (args != null) { msg = format(msg, args); }
+        return format("[       SAVE]   %-80s", msg);
     }
 
     private static String plainMsg(@NotNull String msg, @Nullable Object... args) {
-        if (args != null) { msg = String.format(msg, args); }
-        return String.format("[           ]   %-80s", msg);
+        if (args != null) { msg = format(msg, args); }
+        return format("[           ]   %-80s", msg);
     }
 
     private static void log(Level level, LogPrint logPrint, @NotNull String msg, @Nullable Object... args) {
