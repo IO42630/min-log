@@ -7,7 +7,7 @@
         <version>jdk17-0.0</version>
     </parent>
     <artifactId>min-log</artifactId>
-    <version>0.1.2</version>
+    <version>0.2</version>
     <name>min-log</name>
     <dependencyManagement>
         <dependencies>
