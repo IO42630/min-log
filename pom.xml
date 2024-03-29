@@ -8,13 +8,12 @@
     </parent>
     <artifactId>min-log</artifactId>
     <version>0.2</version>
-    <name>min-log</name>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>com.olexyn</groupId>
                 <artifactId>min-bom</artifactId>
-                <version>jdk17-0.0</version>
+                <version>jdk17-0.3</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -26,8 +25,8 @@
             <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker-qual</artifactId>
         </dependency>
     </dependencies>
 </project>
