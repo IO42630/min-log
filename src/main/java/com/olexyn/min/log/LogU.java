@@ -7,8 +7,8 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 import static com.olexyn.min.log.LogPrint.END;
 import static com.olexyn.min.log.LogPrint.LOAD;
@@ -19,7 +19,8 @@ import static java.lang.String.format;
 import static java.util.logging.Level.INFO;
 import static java.util.logging.Level.WARNING;
 
-public class LogU {
+@SuppressWarnings("unused")
+public final class LogU {
 
     private LogU() { }
 
@@ -51,32 +52,32 @@ public class LogU {
         return logger;
     }
 
-    private static String startMsg(@NotNull String msg, @Nullable Object... args) {
+    private static String startMsg(@NonNull String msg, @Nullable Object... args) {
         if (args != null) { msg = format(msg, args); }
         return format("[START >    ]   %-80s", msg);
     }
 
-    private static String endMsg(@NotNull String msg, @Nullable Object... args) {
+    private static String endMsg(@NonNull String msg, @Nullable Object... args) {
         if (args != null) { msg = format(msg, args); }
         return format("[      > END]   %-80s", msg);
     }
 
-    private static String loadMsg(@NotNull String msg, @Nullable Object... args) {
+    private static String loadMsg(@NonNull String msg, @Nullable Object... args) {
         if (args != null) { msg = format(msg, args); }
         return format("[LOAD       ]   %-80s", msg);
     }
 
-    private static String saveMsg(@NotNull String msg, @Nullable Object... args) {
+    private static String saveMsg(@NonNull String msg, @Nullable Object... args) {
         if (args != null) { msg = format(msg, args); }
         return format("[       SAVE]   %-80s", msg);
     }
 
-    private static String plainMsg(@NotNull String msg, @Nullable Object... args) {
+    private static String plainMsg(@NonNull String msg, @Nullable Object... args) {
         if (args != null) { msg = format(msg, args); }
         return format("[           ]   %-80s", msg);
     }
 
-    private static void log(Level level, LogPrint logPrint, @NotNull String msg, @Nullable Object... args) {
+    private static void log(Level level, LogPrint logPrint, @NonNull String msg, @Nullable Object... args) {
         switch (logPrint) {
             case START -> msg = startMsg(msg, args);
             case END -> msg = endMsg(msg, args);
@@ -88,47 +89,47 @@ public class LogU {
         logger.log(level, msg);
     }
 
-    public static void infoStart(boolean is, @NotNull String msg, @Nullable Object... args) {
+    public static void infoStart(boolean is, @NonNull String msg, @Nullable Object... args) {
         if (is) { infoStart(msg, args); }
     }
 
-    public static void infoStart(@NotNull String msg, @Nullable Object... args) {
+    public static void infoStart(@NonNull String msg, @Nullable Object... args) {
         log(INFO, START, msg, args);
     }
 
-    public static void infoEnd(boolean is, @NotNull String msg, @Nullable Object... args) {
+    public static void infoEnd(boolean is, @NonNull String msg, @Nullable Object... args) {
         if (is) { infoStart(msg, args); }
     }
 
-    public static void infoEnd(@NotNull String msg, @Nullable Object... args) {
+    public static void infoEnd(@NonNull String msg, @Nullable Object... args) {
         log(INFO, END, msg, args);
     }
 
-    public static void infoPlain(boolean is, @NotNull String msg, @Nullable Object... args) {
+    public static void infoPlain(boolean is, @NonNull String msg, @Nullable Object... args) {
         if (is) { infoPlain(msg, args); }
     }
 
-    public static void infoPlain(@NotNull String msg, @Nullable Object... args) {
+    public static void infoPlain(@NonNull String msg, @Nullable Object... args) {
         log(INFO, PLAIN, msg, args);
     }
 
-    public static void warnStart(@NotNull String msg, @Nullable Object... args) {
+    public static void warnStart(@NonNull String msg, @Nullable Object... args) {
         log(WARNING, START, msg, args);
     }
 
-    public static void warnEnd(@NotNull String msg, @Nullable Object... args) {
+    public static void warnEnd(@NonNull String msg, @Nullable Object... args) {
         log(WARNING, END, msg, args);
     }
 
-    public static void warnPlain(@NotNull String msg, @Nullable Object... args) {
+    public static void warnPlain(@NonNull String msg, @Nullable Object... args) {
         log(WARNING, PLAIN, msg, args);
     }
 
-    public static void save(@NotNull String msg, @Nullable Object... args) {
+    public static void save(@NonNull String msg, @Nullable Object... args) {
         log(INFO, SAVE, msg, args);
     }
 
-    public static void load(@NotNull String msg, @Nullable Object... args) {
+    public static void load(@NonNull String msg, @Nullable Object... args) {
         log(INFO, LOAD, msg, args);
     }
 
