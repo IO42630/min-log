@@ -53,27 +53,27 @@ public class LogU {
 
     private static String startMsg(@NonNull String msg, @Nullable Object... args) {
         if (args != null) { msg = format(msg, args); }
-        return format("[START >    ]   %-80s", msg);
+        return format("[START >] %-60s", msg);
     }
 
     private static String endMsg(@NonNull String msg, @Nullable Object... args) {
         if (args != null) { msg = format(msg, args); }
-        return format("[      > END]   %-80s", msg);
+        return format("[  > END] %-60s", msg);
     }
 
     private static String loadMsg(@NonNull String msg, @Nullable Object... args) {
         if (args != null) { msg = format(msg, args); }
-        return format("[LOAD       ]   %-80s", msg);
+        return format("[LOAD   ] %-60s", msg);
     }
 
     private static String saveMsg(@NonNull String msg, @Nullable Object... args) {
         if (args != null) { msg = format(msg, args); }
-        return format("[       SAVE]   %-80s", msg);
+        return format("[   SAVE] %-60s", msg);
     }
 
     private static String plainMsg(@NonNull String msg, @Nullable Object... args) {
         if (args != null) { msg = format(msg, args); }
-        return format("[           ]   %-80s", msg);
+        return format("[       ] %-60s", msg);
     }
 
     private static void log(Level level, LogPrint logPrint, @NonNull String msg, @Nullable Object... args) {
