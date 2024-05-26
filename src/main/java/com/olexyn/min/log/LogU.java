@@ -1,14 +1,14 @@
 package com.olexyn.min.log;
 
-import org.checkerframework.checker.nullness.qual.NonNull;
-import org.checkerframework.checker.nullness.qual.Nullable;
-
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
 
 import static com.olexyn.min.log.LogPrint.END;
 import static com.olexyn.min.log.LogPrint.LOAD;
@@ -19,7 +19,8 @@ import static java.lang.String.format;
 import static java.util.logging.Level.INFO;
 import static java.util.logging.Level.WARNING;
 
-public class LogU {
+@SuppressWarnings("unused")
+public final class LogU {
 
     private LogU() { }
 
