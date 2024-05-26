@@ -1,14 +1,14 @@
 package com.olexyn.min.log;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
+import org.checkerframework.checker.nullness.qual.Nullable;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import org.checkerframework.checker.nullness.qual.NonNull;
-import org.checkerframework.checker.nullness.qual.Nullable;
 
 import static com.olexyn.min.log.LogPrint.END;
 import static com.olexyn.min.log.LogPrint.LOAD;
@@ -77,7 +77,7 @@ public final class LogU {
         return format("[       ] %-60s", msg);
     }
 
-    private static void log(Level level, LogPrint logPrint, @NonNull String msg, @Nullable Object... args) {
+    public static void log(Level level, LogPrint logPrint, @NonNull String msg, @Nullable Object... args) {
         switch (logPrint) {
             case START -> msg = startMsg(msg, args);
             case END -> msg = endMsg(msg, args);
