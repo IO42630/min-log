@@ -6,7 +6,7 @@ import java.util.logging.SimpleFormatter;
 
 public class LogFormatter extends SimpleFormatter {
 
-    private static String FORMAT = "[%1$tF %1$tT] [%2$-7s] [%3$-20s] %4$-120s [%5$s]\n";
+    private static String FORMAT = "[%1$tF %1$tT][%2$-7s][%3$-20s] %4$-80s [%5$s]\n";
     private static String ROOT_PKG = "com.olexyn.";
     private static final String LOG_PKG = "com.olexyn.min.log";
 

@@ -9,7 +9,7 @@
 		<version>17.0.1</version>
 	</parent>
 	<artifactId>min-log</artifactId>
-	<version>0.3</version>
+    <version>0.5</version>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
