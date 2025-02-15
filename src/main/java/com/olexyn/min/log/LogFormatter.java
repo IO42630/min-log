@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.logging.LogRecord;
 import java.util.logging.SimpleFormatter;
 
+import static com.olexyn.min.log.LogUtil.jobName;
+
 public class LogFormatter extends SimpleFormatter {
 
     private static String FORMAT = "[%1$tF %1$tT][%2$-7s][%3$-20s] %4$-80s [%5$s]\n";
@@ -31,9 +33,7 @@ public class LogFormatter extends SimpleFormatter {
         );
     }
 
-    private static String jobName() {
-        return Thread.currentThread().getName();
-    }
+
 
     public static String methodName() {
         int pos = 1;

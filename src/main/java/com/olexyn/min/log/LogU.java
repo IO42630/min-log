@@ -4,7 +4,9 @@ import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -15,12 +17,15 @@ import static com.olexyn.min.log.LogPrint.LOAD;
 import static com.olexyn.min.log.LogPrint.PLAIN;
 import static com.olexyn.min.log.LogPrint.SAVE;
 import static com.olexyn.min.log.LogPrint.START;
+import static com.olexyn.min.log.LogUtil.jobName;
 import static java.lang.String.format;
 import static java.util.logging.Level.INFO;
 import static java.util.logging.Level.WARNING;
 
 @SuppressWarnings("unused")
 public final class LogU {
+
+    public static final List<String> THREADS_TO_IGNORE_BELOW_WARNING = new ArrayList<>();
 
     private LogU() { }
 
@@ -78,6 +83,11 @@ public final class LogU {
     }
 
     public static void log(Level level, LogPrint logPrint, @NonNull String msg, @Nullable Object... args) {
+        if (level.intValue() <= WARNING.intValue()
+            && THREADS_TO_IGNORE_BELOW_WARNING.contains(jobName())) {
+            return;
+        }
+
         switch (logPrint) {
             case START -> msg = startMsg(msg, args);
             case END -> msg = endMsg(msg, args);
