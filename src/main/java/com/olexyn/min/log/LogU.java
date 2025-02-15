@@ -83,9 +83,12 @@ public final class LogU {
     }
 
     public static void log(Level level, LogPrint logPrint, @NonNull String msg, @Nullable Object... args) {
-        if (level.intValue() <= WARNING.intValue()
-            && THREADS_TO_IGNORE_BELOW_WARNING.contains(jobName())) {
-            return;
+        if (level.intValue() <= WARNING.intValue()) {
+            for (var ignore : THREADS_TO_IGNORE_BELOW_WARNING) {
+                if (jobName().contains(ignore)) {
+                    return;
+                }
+            }
         }
 
         switch (logPrint) {
