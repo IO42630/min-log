@@ -6,16 +6,16 @@
 	<parent>
 		<groupId>com.olexyn</groupId>
 		<artifactId>min-root</artifactId>
-		<version>17.0.2</version>
+		<version>25.0.1</version>
 	</parent>
 	<artifactId>min-log</artifactId>
-	<version>0.8</version>
+	<version>0.9.0</version>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>com.olexyn</groupId>
 				<artifactId>min-bom</artifactId>
-				<version>17.0.6</version>
+				<version>25.0.0</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

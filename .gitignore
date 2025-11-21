@@ -1,3 +1,4 @@
 /.idea/
 /min-log.iml
 /target/
+/.env
