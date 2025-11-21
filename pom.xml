@@ -10,6 +10,10 @@
 	</parent>
 	<artifactId>min-log</artifactId>
 	<version>0.9.0</version>
+	<packaging>jar</packaging>
+	<name>min-log</name>
+	<description>Wrapper for Java logger.</description>
+	<url>https://github.com/IO42630/min-log</url>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
