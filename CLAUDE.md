@@ -1,9 +1,11 @@
 # min-log
 
 ## Purpose
+
 Enhanced logging wrapper around java.util.logging with pretty formatting, thread names, and method names.
 
 ## Guidelines
+
 - **Architecture**: Utility library with static methods
 - **Dependencies**: min-bom for dependency management
 - **Parent**: min-root (needs update to 21.0.0)
@@ -11,6 +13,7 @@ Enhanced logging wrapper around java.util.logging with pretty formatting, thread
 - **Usage**: Use LogU.remake() to customize logging behavior
 
 ## Key Features
+
 - Pretty console and file output formatting
 - Thread name and method name display
 - Multiple log types: START, END, PLAIN, SAVE, LOAD
@@ -18,6 +21,7 @@ Enhanced logging wrapper around java.util.logging with pretty formatting, thread
 - Automatic FileHandler and ConsoleHandler setup
 
 ## Code Patterns
+
 ```java
 // Initialize logging
 LogU.remake(logFileDir, "com.myproject", customFormat);
@@ -31,6 +35,7 @@ LogU.load("Loaded config %s", configName);
 ```
 
 ## Maintenance
+
 - **URGENT**: Update parent to min-root 21.0.0
 - Keep formatter compatible with java.util.logging
 - Thread filtering logic in THREADS_TO_IGNORE_BELOW_WARNING
